@@ -10,7 +10,7 @@ async function fetchTetrioData() {
     //----------------------------------
     //-------------rehtml---------------
 
-    console.log("hi");
+    console.log(data);
 
     //----------------------------------
 

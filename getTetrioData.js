@@ -18,6 +18,8 @@ async function getTetrioData(userID) {
       tr: tlData.tr.toFixed(2) ?? undefined,
       rd: tlData.rd.toFixed(2) ?? undefined,
       rank: tlData.rank ?? undefined,
+      prev_rank: tlData.prev_rank ?? undefined,
+      prev_at: tlData.prev_at ?? undefined,
       next_rank: tlData.next_rank ?? undefined,
       next_at: tlData.next_at ?? undefined,
       gamesplayed: tlData.gamesplayed ?? undefined,
