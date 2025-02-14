@@ -1,0 +1,20 @@
+1.遇到 js 無法引入 module 的 import問題
+  解決方法:
+  創建package.json
+  {
+  "type": "module"
+  }
+
+2.遇到 html 無法引入 module 的 import問題
+  解決方法:
+  在head加入 type="module"
+  例如<script src="app.js" type="module" defer></script>
+
+3.遇到 html 無法使用 file:// 請求 (CORS Policy Error / CORS Issue)
+  解決方法:
+  創建後端，並且上資料到 http://localhost 來運行
+
+4.遇到 tetrio api CORS 的問題 (CORS Blocked / CORS Restriction)
+  解決方法:
+  一.在後端設定 CORS (但我不可能叫tetrio這麼做)
+  二.利用 cors-anywhere api 來去避開 CORS 問題
