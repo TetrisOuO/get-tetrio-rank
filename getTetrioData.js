@@ -1,29 +1,28 @@
 async function getTetrioData(userID) {
-  try {
-    const userResponse = await fetch(`https://ch.tetr.io/api/users/${userID}`);
+  const proxyUrl = "https://api.allorigins.win/raw?url=";
+  const apiUrl = `https://ch.tetr.io/api/users/${userID}`;
+  const leagueUrl = `https://ch.tetr.io/api/users/${userID}/summaries/league`;
 
+  try {
+    const userResponse = await fetch(proxyUrl + encodeURIComponent(apiUrl));
     const userDataJson = await userResponse.json();
 
-    const tlResponse = await fetch(
-      `https://ch.tetr.io/api/users/${userID}/summaries/league`
-    );
-
+    const tlResponse = await fetch(proxyUrl + encodeURIComponent(leagueUrl));
     const tlDataJson = await tlResponse.json();
 
-    const userData = userDataJson.data;
-    const tlData = tlDataJson.data;
+    // console.log("userData", userDataJson);
 
     const data = {
-      name: userData.username,
-      tr: tlData.tr.toFixed(2) ?? undefined,
-      rd: tlData.rd.toFixed(2) ?? undefined,
-      rank: tlData.rank ?? undefined,
-      prev_rank: tlData.prev_rank ?? undefined,
-      prev_at: tlData.prev_at ?? undefined,
-      next_rank: tlData.next_rank ?? undefined,
-      next_at: tlData.next_at ?? undefined,
-      gamesplayed: tlData.gamesplayed ?? undefined,
-      gameswon: tlData.gameswon ?? undefined,
+      name: userDataJson.data.username,
+      tr: tlDataJson.data.tr ?? undefined,
+      rd: tlDataJson.data.rd ?? undefined,
+      rank: tlDataJson.data.rank ?? undefined,
+      prev_rank: tlDataJson.data.prev_rank ?? undefined,
+      prev_at: tlDataJson.data.prev_at ?? undefined,
+      next_rank: tlDataJson.data.next_rank ?? undefined,
+      next_at: tlDataJson.data.next_at ?? undefined,
+      gamesplayed: tlDataJson.data.gamesplayed ?? undefined,
+      gameswon: tlDataJson.data.gameswon ?? undefined,
     };
     return data;
   } catch (error) {
