@@ -23,6 +23,9 @@ async function getTetrioData(userID) {
       next_at: tlDataJson.data.next_at ?? undefined,
       gamesplayed: tlDataJson.data.gamesplayed ?? undefined,
       gameswon: tlDataJson.data.gameswon ?? undefined,
+      apm: tlDataJson.data.apm ?? undefined,
+      pps: tlDataJson.data.pps ?? undefined,
+      vs: tlDataJson.data.vs ?? undefined,
     };
     return data;
   } catch (error) {
