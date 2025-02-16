@@ -1,0 +1,55 @@
+@font-face {
+  font-family: HUN;
+  src: url("./font/HunDIN1451.ttf");
+}
+
+body {
+  background-color: black;
+  color: #fff;
+  font-size: 36px;
+  font-family: HUN;
+  width: 400px;
+}
+
+.outside {
+  width: 400px;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 0.35em;
+  width: 400px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rank_png {
+  height: 1.1em;
+  vertical-align: -20%;
+  margin-top: -0.2em;
+  margin-right: 0.2em;
+}
+
+.tr {
+  text-shadow: 0 2px #939393, 0 0 16px #fff4;
+}
+
+.s75 {
+  font-size: 0.75em;
+}
+
+.stats {
+  margin-top: 0.2em;
+  display: flex;
+  align-items: center;
+}
+
+.stat {
+  margin: 0 0.4em;
+  font-size: 0.35em;
+}
