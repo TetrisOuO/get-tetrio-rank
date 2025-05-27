@@ -1,10 +1,20 @@
 import getTetrioData from "./getTetrioData.js";
-
-const userID = "rikayamano"; // Tetr.io 使用者名稱
 const reFresh_interval = 60000; // 每1000為一秒
 
 async function fetchTetrioData() {
   try {
+    //調用l/api/userid獲取最新userID
+    const getcurrentUserID = async () => {
+      try {
+        const res = await fetch("api/userid");
+        const data = await res.json();
+        return data.userID;
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    const userID = await getcurrentUserID();
     const data = await getTetrioData(userID.toLowerCase());
     if (!data) return null;
 
