@@ -15,7 +15,7 @@ body {
   width: 400px;
   align-items: center;
   justify-items: center;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .title {

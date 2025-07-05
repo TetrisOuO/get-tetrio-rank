@@ -39,7 +39,7 @@ async function createTetraLeagueDOM() {
   outside.className = "outside";
 
   // Create title
-  const title = document.createElement("span");
+  const title = document.createElement("div");
   title.className = "title";
   title.textContent = "TETRA LEAGUE";
   outside.appendChild(title);
