@@ -4,23 +4,28 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: black;
   color: #fff;
   font-size: 36px;
   font-family: HUN;
-  width: 400px;
+  width: 200px;
+  height: 100px;
 }
 
 .outside {
-  width: 400px;
+  width: 200px;
   align-items: center;
   justify-items: center;
   text-align: center;
+  margin-top: 10px;
 }
 
 .title {
   font-size: 0.35em;
-  width: 400px;
+  padding-bottom: 3px;
+  width: 200px;
 }
 
 .rating {
